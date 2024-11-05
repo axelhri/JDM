@@ -1,0 +1,251 @@
+:root {
+  /* primary */
+  --clr-primary-50: #ecfdf6;
+  --clr-primary-100: #d1fae6;
+  --clr-primary-200: #a8f2d2;
+  --clr-primary-300: #6fe6bb;
+  --clr-primary-400: #36d19e;
+  --clr-primary-500: #12b785;
+  --clr-primary-600: #07946c;
+  --clr-primary-700: #05775a;
+  --clr-primary-800: #075e49;
+  --clr-primary-900: #07503f;
+  --clr-primary-950: #022c23;
+
+  /* nuance */
+  --clr-nuance-50: #f6f6f6;
+  --clr-nuance-100: #e7e7e7;
+  --clr-nuance-200: #d1d1d1;
+  --clr-nuance-300: #b0b0b0;
+  --clr-nuance-400: #888888;
+  --clr-nuance-500: #6d6d6d;
+  --clr-nuance-600: #5d5d5d;
+  --clr-nuance-700: #4f4f4f;
+  --clr-nuance-800: #454545;
+  --clr-nuance-900: #3d3d3d;
+  --clr-nuance-950: #000000;
+
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --offwhite: #e8e7dd;
+
+  /* font family */
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-open: "Open Sans", serif;
+  --ff-outfit: "Outfit", sans-serif;
+  --ff-amatic: "Amatic SC", sans-serif;
+  --ff-karla: "Karla", sans-serif;
+
+  /* misc */
+  --transition-02: all 0.2s ease-in-out;
+  --transition-04: all 0.4s ease-in-out;
+}
+
+body {
+  min-block-size: 500vh;
+}
+
+nav > header {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  inline-size: 100%;
+  position: fixed;
+  z-index: 1;
+  background: rgb(68, 49, 34);
+}
+
+.logoContainer {
+  font-size: 3rem;
+  font-family: var(--ff-amatic);
+  font-weight: 800;
+  color: var(--offwhite);
+}
+
+.linksContainer ul {
+  font-family: var(--ff-outfit);
+  letter-spacing: 0.05rem;
+}
+
+.linksContainer li > a {
+  color: var(--clr-black);
+  font-weight: 500;
+}
+
+.burgerMenu {
+  display: block;
+}
+
+.burgerContainer {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.burgerBar {
+  width: 100%;
+  height: 5px;
+  background-color: var(--clr-primary-600);
+  border-radius: 2px;
+  transition: var(--transition-04);
+}
+
+.middleBar {
+  background-color: var(--clr-primary-600);
+  border-radius: 2px;
+}
+
+.open.middleBar {
+  transform: translateX(-10px);
+}
+
+.open.topBar {
+  transform: translateX(-5px);
+}
+
+.open.bottomBar {
+  transform: translateX(-5px);
+}
+
+/* max 1000px */
+
+@media screen and (max-width: 1000px) {
+  .linksContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 30%);
+    transition: var(--transition-04);
+    /* background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)),
+      url(../images/rows-diverse-crops-organic-farm-featuring-rich-greens-earthy-browns-represent-sustainability.jpg)
+        no-repeat; */
+    background: rgb(68, 49, 34);
+    background-size: cover;
+    z-index: -1;
+    box-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.05);
+    min-inline-size: 100%;
+  }
+
+  .linksContainer.active {
+    transform: translate(-50%, 30%);
+    opacity: 1;
+  }
+
+  .linksContainer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    font-size: 1.5rem;
+    margin-inline: auto;
+    inline-size: 90%;
+    text-align: center;
+    padding-block: 1rem;
+  }
+
+  .linksContainer li > a {
+    /* text-shadow: #000000d8 0 5px 5px; */
+    padding: 0.2rem 0.5rem;
+    color: var(--offwhite);
+  }
+
+  .facebookLink {
+    display: none;
+  }
+}
+
+/* min 1000px */
+
+@media screen and (min-width: 1000px) {
+  nav > header {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--offwhite);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .logoContainer {
+    font-size: 3rem;
+    font-family: var(--ff-amatic);
+    font-weight: 800;
+    color: var(--clr-primary-600);
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+  .linksContainer ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+
+  .linksContainer {
+    margin-inline-end: 1rem;
+  }
+
+  .linksContainer li > a {
+    color: var(--clr-black);
+    font-weight: 400;
+    transition: var(--transition-02);
+  }
+
+  .linksContainer li > a:hover {
+    color: var(--clr-primary-700);
+    font-weight: 400;
+  }
+
+  .facebookLink {
+    display: block;
+  }
+
+  .facebookContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(31, 78, 209);
+    font-size: 1.8rem;
+  }
+}
+
+/* min 1200px */
+
+@media screen and (min-width: 1200px) {
+  nav > header {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    inline-size: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .linksContainer ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.3rem;
+    justify-content: center;
+  }
+
+  .facebookLink {
+    display: block;
+    margin-inline-end: 1rem;
+  }
+}
+
+/* min 1600px */
+
+@media screen and (min-width: 1600px) {
+  .facebookContainer {
+    font-size: 2.2rem;
+  }
+}
