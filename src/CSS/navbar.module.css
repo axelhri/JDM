@@ -46,30 +46,43 @@ body {
 }
 
 nav > header {
+  background: var(--offwhite);
+  min-inline-size: 100vw;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
   padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   inline-size: 100%;
-  position: fixed;
-  z-index: 1;
-  background: rgb(68, 49, 34);
 }
 
 .logoContainer {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-family: var(--ff-amatic);
   font-weight: 800;
-  color: var(--offwhite);
+  color: var(--clr-primary-900);
+}
+
+.logoContainer a {
+  color: inherit;
+}
+
+.logoContainer.active {
+  transform: scale(0.9);
+  top: -0.5rem;
+  left: -0.2rem;
 }
 
 .linksContainer ul {
-  font-family: var(--ff-outfit);
-  letter-spacing: 0.05rem;
+  font-family: var(--ff-karla);
 }
 
 .linksContainer li > a {
-  color: var(--clr-black);
   font-weight: 500;
 }
 
@@ -88,14 +101,9 @@ nav > header {
 .burgerBar {
   width: 100%;
   height: 5px;
-  background-color: var(--clr-primary-600);
-  border-radius: 2px;
+  background-color: var(--clr-primary-700);
+  border-radius: 20px;
   transition: var(--transition-04);
-}
-
-.middleBar {
-  background-color: var(--clr-primary-600);
-  border-radius: 2px;
 }
 
 .open.middleBar {
@@ -117,41 +125,58 @@ nav > header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(50%, 30%);
+    transform: translate(50%, 20%);
     transition: var(--transition-04);
-    /* background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)),
-      url(../images/rows-diverse-crops-organic-farm-featuring-rich-greens-earthy-browns-represent-sustainability.jpg)
-        no-repeat; */
-    background: rgb(68, 49, 34);
+    background: var(--offwhite);
     background-size: cover;
     z-index: -1;
     box-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.05);
     min-inline-size: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .linksContainer.active {
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 20%);
     opacity: 1;
+  }
+  .linksContainer.active ul {
+    margin-inline-start: 2rem;
   }
 
   .linksContainer ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    font-size: 1.5rem;
-    margin-inline: auto;
-    inline-size: 90%;
-    text-align: center;
-    padding-block: 1rem;
+    gap: 1rem;
+    font-size: 1.3rem;
+    inline-size: max-content;
+    padding-block: 2rem 1rem;
+    align-items: center;
+    transition: margin-inline-start 1.5s ease-in-out;
+  }
+
+  .linksContainer ul li {
+    text-align: start;
   }
 
   .linksContainer li > a {
-    /* text-shadow: #000000d8 0 5px 5px; */
     padding: 0.2rem 0.5rem;
-    color: var(--offwhite);
+    color: var(--clr-primary-900);
+    font-weight: 700;
   }
 
-  .facebookLink {
+  .logoContainer {
+    color: var(--clr-white);
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    background-color: var(--clr-primary-800);
+    padding: 0.7rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: var(--transition-04);
+  }
+
+  .social {
     display: none;
   }
 }
@@ -159,20 +184,12 @@ nav > header {
 /* min 1000px */
 
 @media screen and (min-width: 1000px) {
-  nav > header {
+  .navContainer {
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--offwhite);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .logoContainer {
-    font-size: 3rem;
-    font-family: var(--ff-amatic);
-    font-weight: 800;
-    color: var(--clr-primary-600);
+    margin-inline: auto;
   }
 
   .burgerMenu {
@@ -192,42 +209,45 @@ nav > header {
   }
 
   .linksContainer li > a {
-    color: var(--clr-black);
-    font-weight: 400;
+    color: var(--clr-primary-950);
+    font-weight: 700;
     transition: var(--transition-02);
   }
 
   .linksContainer li > a:hover {
-    color: var(--clr-primary-700);
-    font-weight: 400;
+    color: var(--clr-primary-500);
   }
 
-  .facebookLink {
+  .logoContainer {
+    font-size: 2.5rem;
+  }
+
+  .social {
     display: block;
   }
 
-  .facebookContainer {
+  .socialContainer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: rgb(31, 78, 209);
-    font-size: 1.8rem;
+  }
+
+  .socialContainer i {
+    font-size: 1.5rem;
+    color: var(--clr-primary-900);
+  }
+
+  .navPhone {
+    font-family: var(--ff-karla);
+    font-weight: 700;
+    color: var(--clr-primary-800);
+    font-size: 1rem;
   }
 }
 
 /* min 1200px */
 
 @media screen and (min-width: 1200px) {
-  nav > header {
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    inline-size: 100%;
-    position: fixed;
-    z-index: 1;
-  }
-
   .linksContainer ul {
     display: flex;
     align-items: center;
@@ -236,16 +256,23 @@ nav > header {
     justify-content: center;
   }
 
-  .facebookLink {
+  .navContainer {
+    inline-size: 90%;
+  }
+
+  .social {
     display: block;
-    margin-inline-end: 1rem;
+  }
+
+  .navPhone {
+    font-size: 1.3rem;
   }
 }
 
 /* min 1600px */
 
 @media screen and (min-width: 1600px) {
-  .facebookContainer {
+  .socialContainer {
     font-size: 2.2rem;
   }
 }

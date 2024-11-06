@@ -20,58 +20,65 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav>
+    <nav id="nav">
       <header>
-        <span className={styles.logoContainer}>Les Jardins de Magotte</span>
-        <div
-          className={`${styles.linksContainer} ${
-            isOpen ? styles.active : styles.notActive
-          }`}
-        >
-          <ul>
-            <li>
-              <a href="">A propos</a>
-            </li>
-            <li>
-              <a href="">Nos produits</a>
-            </li>
-            <li>
-              <a href="">Panier secret</a>
-            </li>
-            <li>
-              <a href="">Nous contactez</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className={styles.burgerMenu}>
+        <div className={styles.navContainer}>
           <div
-            className={styles.burgerContainer}
-            onClick={() => setIsOpen((prev) => !prev)}
+            className={`${styles.logoContainer} ${
+              isOpen ? styles.active : styles.notActive
+            }`}
           >
-            <div
-              className={`${styles.burgerBar} ${styles.topBar} ${
-                isOpen ? styles.open : ""
-              }`}
-            ></div>
-            <div
-              className={`${styles.burgerBar} ${styles.middleBar} ${
-                isOpen ? styles.open : ""
-              }`}
-            ></div>
-            <div
-              className={`${styles.burgerBar} ${styles.bottomBar} ${
-                isOpen ? styles.open : ""
-              }`}
-            ></div>
+            <a href="#nav">Les Jardins de Magotte</a>
           </div>
-        </div>
+          <div
+            className={`${styles.linksContainer} ${
+              isOpen ? styles.active : styles.notActive
+            }`}
+          >
+            <ul>
+              <li>
+                <a href="">A propos</a>
+              </li>
+              <li>
+                <a href="">Nos produits</a>
+              </li>
+              <li>
+                <a href="">Nos paniers</a>
+              </li>
+              <li>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </div>
 
-        <div className={styles.facebookLink}>
-          <div className={styles.facebookContainer}>
-            <a href="https://www.facebook.com/FermierMagotte" target="_blank">
-              <i className="fa-brands fa-facebook"></i>
-            </a>
+          <div className={styles.burgerMenu}>
+            <div
+              className={styles.burgerContainer}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <div
+                className={`${styles.burgerBar} ${styles.topBar} ${
+                  isOpen ? styles.open : ""
+                }`}
+              ></div>
+              <div
+                className={`${styles.burgerBar} ${styles.middleBar} ${
+                  isOpen ? styles.open : ""
+                }`}
+              ></div>
+              <div
+                className={`${styles.burgerBar} ${styles.bottomBar} ${
+                  isOpen ? styles.open : ""
+                }`}
+              ></div>
+            </div>
+          </div>
+
+          <div className={styles.social}>
+            <div className={styles.socialContainer}>
+              <i className="fa-solid fa-phone"></i>
+              <span className={styles.navPhone}>06 33 67 30 22</span>
+            </div>
           </div>
         </div>
       </header>
