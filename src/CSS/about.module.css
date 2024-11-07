@@ -47,7 +47,6 @@
 }
 
 .aboutContainer {
-  padding-block-start: 4rem;
   display: flex;
   inline-size: 90%;
   justify-content: space-around;
@@ -114,5 +113,9 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
     overflow: scroll;
+  }
+
+  .aboutContainer {
+    padding-block-start: 4rem;
   }
 }
