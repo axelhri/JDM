@@ -46,7 +46,7 @@
 }
 
 .imgContainer {
-  background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.8)),
     url(../images/img2.jpg) no-repeat;
   background-size: cover;
   min-block-size: 50vh;
@@ -96,19 +96,8 @@
 
 @media screen and (min-width: 650px) {
   .imgContainer p {
-    color: var(--offwhite);
     inline-size: 60%;
-    background: var(--clr-primary-900);
-    padding: 1rem;
     font-size: 1.2rem;
-    font-family: var(--ff-open);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-weight: 500;
   }
 }
 

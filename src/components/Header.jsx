@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import styles from "../CSS/header.module.css";
-import headerImg1 from "../images/img2.jpg";
 import headerImg2 from "../images/img3.jpg";
 import video from "../images/44774-440000874.mp4";
 
@@ -10,7 +9,7 @@ function Header() {
   useEffect(() => {
     // Set the playback speed of the video to 0.5x (or another value if preferred)
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.3; // Adjust the value as needed (0.5x speed, 0.75x, etc.)
+      videoRef.current.playbackRate = 0.5; // Adjust the value as needed (0.5x speed, 0.75x, etc.)
     }
   }, []);
 
