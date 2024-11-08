@@ -42,12 +42,13 @@
 }
 
 nav {
-  block-size: 5vh;
+  /* block-size: 5vh; */
 }
 
 nav > header {
   min-inline-size: 100vw;
   position: fixed;
+  top: 0;
   z-index: 10;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background: var(--offwhite);

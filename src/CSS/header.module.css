@@ -233,3 +233,30 @@
     line-height: 1.4;
   }
 }
+
+@media screen and (min-width: 1800px) {
+  .headerImg img {
+    border-radius: 5px;
+    filter: brightness(0.8);
+    object-fit: cover;
+    block-size: 30rem;
+  }
+  .headerImg {
+    display: flex;
+    max-inline-size: 65rem;
+    margin-inline: auto;
+    gap: 3rem;
+  }
+
+  .headerImg h1 {
+    color: var(--clr-primary-600);
+    font-family: var(--ff-poppins);
+    font-size: 2rem;
+    text-shadow: black 0 5px 5px;
+  }
+
+  .headerImg p {
+    inline-size: 70%;
+    font-size: 1.7rem;
+  }
+}

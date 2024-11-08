@@ -9,7 +9,7 @@ function Header() {
   useEffect(() => {
     // Set the playback speed of the video to 0.5x (or another value if preferred)
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // Adjust the value as needed (0.5x speed, 0.75x, etc.)
+      videoRef.current.playbackRate = 0.4; // Adjust the value as needed (0.5x speed, 0.75x, etc.)
     }
   }, []);
 
@@ -44,7 +44,7 @@ function Header() {
             <img src={headerImg2} alt="" />
           </div>
           <div>
-            <h1>Bienvenue aux Jardins de Margotte</h1>
+            <h1>Bienvenue aux Jardins de Magotte</h1>
             <p>
               Votre maraîcher bio situé à Vendegies-sur-Écaillon. Nous cultivons
               avec passion des légumes et fruits de saison bio{" "}
