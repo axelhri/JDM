@@ -73,13 +73,6 @@ function Navbar() {
               ></div>
             </div>
           </div>
-
-          <div className={styles.social}>
-            <div className={styles.socialContainer}>
-              <i className="fa-solid fa-phone"></i>
-              <span className={styles.navPhone}>06 33 67 30 22</span>
-            </div>
-          </div>
         </div>
       </header>
     </nav>

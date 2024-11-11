@@ -1,0 +1,47 @@
+:root {
+  /* primary */
+  --clr-primary-50: #ecfdf6;
+  --clr-primary-100: #d1fae6;
+  --clr-primary-200: #a8f2d2;
+  --clr-primary-300: #6fe6bb;
+  --clr-primary-400: #36d19e;
+  --clr-primary-500: #12b785;
+  --clr-primary-600: #07946c;
+  --clr-primary-700: #05775a;
+  --clr-primary-800: #075e49;
+  --clr-primary-900: #07503f;
+  --clr-primary-950: #022c23;
+
+  /* nuance */
+  --clr-nuance-50: #f6f6f6;
+  --clr-nuance-100: #e7e7e7;
+  --clr-nuance-200: #d1d1d1;
+  --clr-nuance-300: #b0b0b0;
+  --clr-nuance-400: #888888;
+  --clr-nuance-500: #6d6d6d;
+  --clr-nuance-600: #5d5d5d;
+  --clr-nuance-700: #4f4f4f;
+  --clr-nuance-800: #454545;
+  --clr-nuance-900: #3d3d3d;
+  --clr-nuance-950: #000000;
+
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --offwhite: #e8e7dd;
+
+  /* font family */
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-open: "Open Sans", serif;
+  --ff-outfit: "Outfit", sans-serif;
+  --ff-amatic: "Amatic SC", sans-serif;
+  --ff-karla: "Karla", sans-serif;
+
+  /* misc */
+  --transition-02: all 0.2s ease-in-out;
+  --transition-04: all 0.4s ease-in-out;
+}
+
+#products {
+  min-block-size: 50vh;
+  background: var(--clr-primary-950);
+}

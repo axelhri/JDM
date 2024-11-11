@@ -15,19 +15,6 @@ function Header() {
 
   return (
     <header id={styles.header}>
-      <div className={styles.mobileHeader}>
-        <div className={styles.imgContainer}>
-          <h1>Bienvenue aux Jardins de Magotte</h1>
-          <p>
-            Votre maraîcher bio situé à Vendegies-sur-Écaillon. Nous cultivons
-            avec passion des légumes et fruits de saison bio{" "}
-            <span>
-              <i className="fa-brands fa-envira"></i>
-            </span>{" "}
-            pour vous offrir le meilleur de la nature !
-          </p>
-        </div>
-      </div>
       <div className={styles.desktopImgContainer}>
         <video
           ref={videoRef}
@@ -38,22 +25,9 @@ function Header() {
           playsInline
           className={styles.backgroundVideo}
         />
-
         <div className={styles.headerImg}>
-          <div className={styles.imgBefore}>
-            <img src={headerImg2} alt="" />
-          </div>
-          <div>
-            <h1>Bienvenue aux Jardins de Magotte</h1>
-            <p>
-              Votre maraîcher bio situé à Vendegies-sur-Écaillon. Nous cultivons
-              avec passion des légumes et fruits de saison bio{" "}
-              <span>
-                <i className="fa-brands fa-envira"></i>
-              </span>{" "}
-              pour vous offrir le meilleur de la nature !
-            </p>
-          </div>
+          <h1>Bienvenue aux Jardins de Magotte</h1>
+          <p>Votre maraîcher bio situé à Vendegies-sur-Écaillon.</p>
         </div>
       </div>
     </header>

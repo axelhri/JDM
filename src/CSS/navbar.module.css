@@ -41,15 +41,11 @@
   --transition-04: all 0.4s ease-in-out;
 }
 
-nav {
-  /* block-size: 5vh; */
-}
-
 nav > header {
   min-inline-size: 100vw;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background: var(--offwhite);
 }
@@ -63,9 +59,9 @@ nav > header {
 }
 
 .logoContainer {
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-family: var(--ff-amatic);
-  font-weight: 800;
+  font-weight: 900;
   color: var(--clr-primary-900);
 }
 
@@ -75,8 +71,9 @@ nav > header {
 
 .logoContainer.active {
   transform: scale(0.9);
-  top: -0.5rem;
-  left: -0.2rem;
+  top: -0.8rem;
+  left: -0.7rem;
+  border-radius: 0px;
 }
 
 .linksContainer ul {
@@ -150,7 +147,7 @@ nav > header {
     gap: 1rem;
     font-size: 1.3rem;
     inline-size: max-content;
-    padding-block: 2rem 1rem;
+    padding-block: 1rem;
     align-items: center;
     transition: margin-inline-start 1.5s ease-in-out;
   }
@@ -224,7 +221,7 @@ nav > header {
   }
 
   .logoContainer {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .social {
@@ -259,25 +256,5 @@ nav > header {
     gap: 2rem;
     font-size: 1.3rem;
     justify-content: center;
-  }
-
-  .navContainer {
-    inline-size: 90%;
-  }
-
-  .social {
-    display: block;
-  }
-
-  .navPhone {
-    font-size: 1.3rem;
-  }
-}
-
-/* min 1600px */
-
-@media screen and (min-width: 1600px) {
-  .socialContainer {
-    font-size: 2.2rem;
   }
 }
