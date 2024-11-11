@@ -173,9 +173,9 @@
     display: block;
     position: absolute;
     bottom: 0;
-    left: -1rem;
-    block-size: 23rem;
-    filter: brightness(0.8);
+    left: 0;
+    block-size: 20rem;
+    filter: brightness(0.8) contrast(1.4);
   }
 
   .bgleaf2 {
@@ -183,8 +183,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    block-size: 26rem;
-    filter: brightness(0.8);
+    block-size: 20rem;
+    filter: brightness(0.8) contrast(1.4);
   }
 }
 
@@ -212,6 +212,6 @@
   }
 
   .bgleaf2 {
-    block-size: 32rem;
+    block-size: 26rem;
   }
 }

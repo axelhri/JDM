@@ -37,7 +37,7 @@ function Navbar() {
           >
             <ul>
               <li>
-                <a href="">A propos</a>
+                <a href="">À propos</a>
               </li>
               <li>
                 <a href="">Nos produits</a>
