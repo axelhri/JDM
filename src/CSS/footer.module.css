@@ -53,6 +53,7 @@
   right: 10rem;
   z-index: 3;
   filter: grayscale(0.9);
+  display: none;
 }
 
 .footerContent {
@@ -200,5 +201,13 @@
   .socials a {
     margin-block-end: 2rem;
     font-size: 1.1rem;
+  }
+}
+
+/* min 1500px */
+
+@media screen and (min-width: 1500px) {
+  .footerImg {
+    display: block;
   }
 }

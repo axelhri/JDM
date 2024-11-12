@@ -121,6 +121,10 @@
     padding: 1rem;
   }
 
+  #about article:last-of-type .aboutText {
+    order: 2;
+  }
+
   .aboutImg img {
     block-size: 25rem;
     inline-size: 15rem;
