@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  block-size: 50vh;
+  block-size: 80vh;
 }
 
 .headerImg {
@@ -61,7 +61,7 @@
   left: 0;
   inline-size: 100vw;
   object-fit: cover;
-  block-size: 50vh;
+  block-size: 80vh;
   z-index: -50;
   filter: brightness(0.5);
   position: fixed;

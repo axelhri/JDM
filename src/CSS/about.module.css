@@ -88,12 +88,12 @@
   font-family: var(--ff-karla);
   font-weight: 700;
   font-size: 0.94rem;
-  color: var(--clr-nuance-900);
+  color: var(--clr-primary-900);
 }
 
 #about h2 {
   font-family: var(--ff-poppins);
-  color: var(--clr-primary-800);
+  color: var(--clr-primary-700);
   font-size: 1.8rem;
   margin-block-end: 1rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
@@ -166,7 +166,6 @@
     font-family: var(--ff-karla);
     font-weight: 700;
     font-size: 1.11rem;
-    color: var(--clr-nuance-900);
   }
 
   .bgleaf1 {
