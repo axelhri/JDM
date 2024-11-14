@@ -24,7 +24,7 @@ function About() {
           </p>
         </div>
         <div className={styles.aboutImg}>
-          <img src={aboutImg1} alt="" />
+          <img src={aboutImg1} alt="" style={{ filter: "brightness(0.9)" }} />
         </div>
       </article>
 
@@ -41,7 +41,7 @@ function About() {
           </p>
         </div>
         <div className={styles.aboutImg}>
-          <img src={aboutImg2} alt="" style={{ filter: "brightness(0.7)" }} />
+          <img src={aboutImg2} alt="" style={{ filter: "brightness(0.8)" }} />
         </div>
       </article>
     </section>
