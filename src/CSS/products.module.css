@@ -72,8 +72,9 @@ h3 {
   margin-inline: auto;
 }
 
-.productsSection img {
+.carousel img {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 @keyframes addBlur {
@@ -118,7 +119,6 @@ h3 {
 
 .productsList {
   inline-size: 80%;
-  /* outline: 2px solid red; */
   margin-inline: auto;
   margin-block-start: 2rem;
   color: var(--offwhite);
@@ -149,6 +149,7 @@ h3 {
   font-style: italic;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-inline-start: 0.5rem;
+  color: var(--clr-nuance-200);
 }
 
 .carouselMosaic {
@@ -169,11 +170,49 @@ h3 {
   font-weight: 600;
 }
 
+.seasonalProducts {
+  margin-inline-start: 10vw;
+}
+
+.seasonalList {
+  margin-block-start: 1.5rem;
+  color: var(--offwhite);
+  font-family: var(--ff-karla);
+  inline-size: 15rem;
+  padding: 0.5rem;
+}
+
+.seasonalList > * + * {
+  margin-block-start: 1rem;
+}
+
+.seasonalList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.seasonalList li p {
+  font-weight: 700;
+}
+
+.seasonalList li span {
+  font-weight: 900;
+  font-family: var(--ff-outfit);
+  /* color: rgb(173, 173, 80); */
+}
+
 /* min 1000px */
 
 @media screen and (min-width: 1000px) {
   .carousel {
     display: none;
+  }
+
+  .productsList {
+    inline-size: 90%;
   }
 
   .productsTitle {
@@ -218,16 +257,38 @@ h3 {
     display: flex;
     gap: 0.8rem;
   }
+
+  .mosaicImgBox img {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .productsTitle {
+    margin-inline-start: 3vw;
+  }
+
+  .pricesContainerTitle {
+    margin-inline-start: 3vw;
+  }
+
+  .seasonalProducts {
+    margin-inline-start: 5vw;
+  }
+
+  .seasonalList {
+    font-size: 1.2rem;
+  }
 }
 
 /* min 1400px */
 
 @media screen and (min-width: 1400px) {
-  .firstMosaicPart {
-    padding-inline-end: 7vw;
+  .firstMosaicPart > .mosaicImgBox:nth-child(1) > img {
+    inline-size: 40rem;
+    border-top-left-radius: 100px;
   }
 
-  .secondMosaicPart {
-    padding-inline-start: 7vw;
+  .secondMosaicPart > .mosaicImgBox:nth-child(2) > img {
+    inline-size: 40rem;
+    border-bottom-right-radius: 100px;
   }
 }

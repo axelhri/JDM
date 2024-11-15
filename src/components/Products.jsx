@@ -11,12 +11,15 @@ import Carousel8 from "../images/products/tomate.jpg";
 import Carousel9 from "../images/products/navets.jpg";
 import Carousel10 from "../images/products/concombre.jpg";
 import Carousel11 from "../images/products/poireaux.jpg";
+import axios from "axios";
 
 function Products() {
   const [carouselIndex, setCarouselIndex] = useState(
     Math.floor(Math.random() * 11)
   );
   const [isImageVisible, setIsImageVisible] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
   const carouselImages = [
     Carousel1,
@@ -31,6 +34,21 @@ function Products() {
     Carousel10,
     Carousel11,
   ];
+
+  useEffect(() => {
+    // Requête pour récupérer les produits
+    axios
+      .get("http://localhost:5000/api/v1/products") // Remplacez par l'URL de votre API
+      .then((response) => {
+        // Mise à jour du tableau des produits
+        setProducts(response.data.products);
+      })
+      .catch((err) => {
+        // Gérer les erreurs
+        setError("Erreur lors de la récupération des produits");
+        console.error(err);
+      });
+  }, []);
 
   // Fonction pour générer des indices uniques pour les images de la mosaïque
   const getUniqueIndices = (excludeIndex, currentMosaicIndices) => {
@@ -270,12 +288,35 @@ function Products() {
           </ul>
         </div>
 
-        {/*  */}
-
         <div className={styles.prices}>
           <span className={styles.pricesContainerTitle}>
             Produits de cette saison
           </span>
+          <div className={styles.seasonalProducts}>
+            <ul className={styles.seasonalList}>
+              {products.length > 0 ? (
+                products.map((product, index) => (
+                  <li key={index}>
+                    <p>{product.name}</p>
+                    <span>
+                      {product.price}{" "}
+                      <span
+                        style={{
+                          color: "rgb(253, 213, 80)",
+                          fontWeight: 200,
+                          fontSize: "1.3rem",
+                        }}
+                      >
+                        €
+                      </span>
+                    </span>
+                  </li>
+                ))
+              ) : (
+                <p>Aucun produit disponible.</p>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

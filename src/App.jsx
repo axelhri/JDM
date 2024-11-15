@@ -1,22 +1,44 @@
-import Navbar from "../src/components/Navbar.jsx";
-import Header from "../src/components/Header.jsx";
-import About from "../src/components/About.jsx";
-import Products from "../src/components/Products.jsx";
-import Contact from "../src/components/Contact.jsx";
-import Footer from "../src/components/Footer.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Header from "./components/Header.jsx";
+import About from "./components/About.jsx";
+import Products from "./components/Products.jsx";
+import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
+import Login from "./components/Admin/Login.jsx";
+import Dashboard from "./components/Admin/Dashboard.jsx"; // Composant Dashboard
+import PrivateRoute from "./components/Admin/PrivateRoute.jsx"; // Importer PrivateRoute
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Header />
+    <Router>
       <main>
-        <About />
-        <Products />
-        <Contact />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Header />
+                <About />
+                <Products />
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/admin" element={<Login />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
       </main>
-      <Footer />
-    </>
+    </Router>
   );
 }
 
