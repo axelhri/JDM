@@ -4,7 +4,7 @@ function Contact() {
   return (
     <section id={styles.contact}>
       {" "}
-      <h4>Contactez-nous</h4>
+      <h5>Contactez-nous</h5>
       <div className={styles.formMap}>
         <form>
           <span>Envoyez-nous un message</span>

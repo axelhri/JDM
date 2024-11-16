@@ -128,6 +128,19 @@
   cursor: pointer;
 }
 
+.backHome {
+  text-align: center;
+  margin-block-start: 2rem;
+}
+
+.backHome a {
+  font-family: var(--ff-open);
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 /* min 600px */
 
 @media screen and (min-width: 600px) {

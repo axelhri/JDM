@@ -70,6 +70,9 @@ function Login() {
           <button type="submit">connexion</button>
         </div>
       </form>
+      <div className={styles.backHome}>
+        <a href="/">Retour vers l&apos;acceuil</a>
+      </div>
     </main>
   );
 }
