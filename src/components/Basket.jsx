@@ -60,7 +60,7 @@ function Basket() {
 
       <div className={styles.otherBaskets}>
         <p>
-          Nous avons d&apos;autre paniers disponible tout au long de
+          Nous avons d&apos;autres paniers disponible tout au long de
           l&apos;année n&apos;hésitez pas a nous contacter pour en savoir plus.
         </p>
       </div>

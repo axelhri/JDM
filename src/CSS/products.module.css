@@ -42,7 +42,6 @@
 }
 
 #products {
-  min-block-size: 50vh;
   background: var(--clr-primary-950);
 }
 

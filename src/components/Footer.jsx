@@ -9,16 +9,16 @@ function Footer() {
         <div className={styles.footerLinksContainer}>
           <ul className={styles.linksContainer}>
             <li>
-              <a href="">À propos</a>
+              <a href="#aboutSection">À propos</a>
             </li>
             <li>
-              <a href="">Nos produits</a>
+              <a href="#productsSection">Nos produits</a>
             </li>
             <li>
-              <a href="">Nos paniers</a>
+              <a href="#basketSection">Nos paniers</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#contactSection">Contact</a>
             </li>
           </ul>
         </div>
@@ -44,7 +44,10 @@ function Footer() {
         </div>
       </div>
       <div className={styles.terms}>
-        <p>Politique de confidentialité</p>
+        <p>
+          {" "}
+          <a href="/terms">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );

@@ -45,6 +45,10 @@
   --transition-04: all 0.4s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth; /* Permet le défilement fluide */
+}
+
 * {
   margin: 0;
   padding: 0;

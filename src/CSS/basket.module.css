@@ -89,12 +89,13 @@ h4 {
   font-family: var(--ff-karla);
   font-size: 1.2rem;
   font-weight: 500;
-  gap: 0.5rem;
+  max-inline-size: 20rem;
+  overflow-wrap: break-word;
+  gap: 1rem;
   inline-size: max-content;
-  /* outline: 2px solid red; */
   margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  list-style: circle;
+  inline-size: 60%;
 }
 
 .basketPrice {
@@ -136,10 +137,7 @@ h4 {
   }
 
   .basketList {
-    grid-template-columns: 1fr 1fr 1fr;
     font-size: 1.5rem;
-    gap: 1rem;
-    margin-inline-start: 6rem;
   }
 
   .basketPrice {

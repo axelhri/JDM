@@ -28,7 +28,7 @@ function Navbar() {
               isOpen ? styles.active : styles.notActive
             }`}
           >
-            <a href="#nav">Les Jardins de Magotte</a>
+            <a href="/">Les Jardins de Magotte</a>
           </div>
           <div
             className={`${styles.linksContainer} ${
@@ -37,16 +37,16 @@ function Navbar() {
           >
             <ul>
               <li>
-                <a href="">À propos</a>
+                <a href="#aboutSection">À propos</a>
               </li>
               <li>
-                <a href="">Nos produits</a>
+                <a href="#productsSection">Nos produits</a>
               </li>
               <li>
-                <a href="">Nos paniers</a>
+                <a href="#basketSection">Nos paniers</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <a href="#contactSection">Contact</a>
               </li>
             </ul>
           </div>

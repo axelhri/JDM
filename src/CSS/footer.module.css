@@ -44,6 +44,7 @@
 #footer {
   background: var(--clr-primary-900);
   position: relative;
+  /* overflow: hidden; */
 }
 
 .footerImg {
@@ -148,13 +149,16 @@
   text-align: center;
   inline-size: 100%;
   padding-block: 0.7rem;
-  font-family: var(--ff-karla);
-  font-size: 0.9em;
-  font-weight: 500;
-  color: white;
   background: var(--clr-primary-950);
   position: relative;
   z-index: 80;
+}
+
+.terms a {
+  font-family: var(--ff-karla);
+  font-size: 0.9em;
+  color: white;
+  font-weight: 500;
 }
 
 .terms p {
@@ -163,6 +167,71 @@
 
 .footerContent > * + * {
   margin-block-start: 1rem;
+}
+
+.termsContainer {
+  background: var(--offwhite);
+  padding: 1rem;
+  min-block-size: 100vh;
+}
+
+.termsContainer > * + * {
+  margin-block-start: 1rem;
+}
+
+h6 {
+  inline-size: max-content;
+  margin-inline: auto;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  font-size: 1.5em;
+  font-family: var(--ff-poppins);
+  margin-block-start: 4rem;
+  margin-block-end: 3rem;
+  color: var(--clr-primary-700);
+}
+
+.termsCard span {
+  font-family: var(--ff-outfit);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.termsCard ul {
+  margin-block-start: 0.5rem;
+  margin-inline-start: 1rem;
+  list-style: disc;
+  font-family: var(--ff-outfit);
+}
+
+.termsCard p {
+  font-size: 0.9em;
+  font-family: var(--ff-karla);
+  font-weight: 600;
+  margin-block-start: 0.5rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.backHome {
+  text-align: center;
+  margin-block-start: 5rem;
+}
+
+.backHome a {
+  font-family: var(--ff-open);
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 /* min 400px */
