@@ -6,8 +6,10 @@ function Dashboard() {
   return (
     <main id={styles.dashboard}>
       <h1>Dashboard</h1>
-      <ProductsForm />
-      <BasketForm />
+      <div className={styles.dashFlex}>
+        <ProductsForm />
+        <BasketForm />
+      </div>
     </main>
   );
 }

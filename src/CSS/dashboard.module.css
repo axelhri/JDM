@@ -194,7 +194,7 @@
   font-weight: 500;
 }
 
-/* min 600px */
+/* min 1200px */
 
 @media screen and (min-width: 1200px) {
   .productRow input[type="number"] {

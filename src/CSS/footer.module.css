@@ -185,7 +185,6 @@ h6 {
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   font-size: 1.5em;
   font-family: var(--ff-poppins);
-  margin-block-start: 4rem;
   margin-block-end: 3rem;
   color: var(--clr-primary-700);
 }
@@ -278,5 +277,10 @@ h6 {
 @media screen and (min-width: 1500px) {
   .footerImg {
     display: block;
+  }
+
+  .termsContainer > * + * {
+    margin-block-start: 2rem;
+    margin-inline-start: 3rem;
   }
 }

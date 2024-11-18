@@ -2,6 +2,10 @@ import styles from "../CSS/basket.module.css";
 import axios from "axios";
 import basketImg from "../images/basket.png";
 import { useEffect, useState } from "react";
+import basketImg1 from "../images/basket1.jpg";
+import basketImg2 from "../images/basket2.jpg";
+import basketImg3 from "../images/basket3.jpg";
+import basketImg4 from "../images/basket4.jpg";
 
 function Basket() {
   const [basket, setBasket] = useState(null); // Changez en null pour attendre un objet complet
@@ -61,8 +65,26 @@ function Basket() {
       <div className={styles.otherBaskets}>
         <p>
           Nous avons d&apos;autres paniers disponible tout au long de
-          l&apos;année n&apos;hésitez pas a nous contacter pour en savoir plus.
+          l&apos;année n&apos;hésitez pas a nous suivre sur notre{" "}
+          <a href="https://www.facebook.com/FermierMagotte" target="_blank">
+            facebook
+          </a>{" "}
+          pour en savoir plus.
         </p>
+        <div className={styles.basketImgsContainer}>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg1} alt="" />
+          </div>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg2} alt="" />
+          </div>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg3} alt="" />
+          </div>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg4} alt="" />
+          </div>
+        </div>
       </div>
     </section>
   );
