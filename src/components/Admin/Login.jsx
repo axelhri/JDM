@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate
+import { useNavigate } from "react-router-dom";
 import styles from "../../CSS/login.module.css";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
 
-  const navigate = useNavigate(); // Initialiser useNavigate
+  const navigate = useNavigate();
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,18 +19,12 @@ function Login() {
         "http://localhost:5000/api/v1/auth/login",
         formData
       );
-      console.log("Login successful", res.data);
 
-      // Récupérer le token et l'ID de l'utilisateur
       const { token } = res.data;
 
-      console.log(token);
-
-      // Stocker le token et l'ID utilisateur dans le localStorage
       localStorage.setItem("token", token);
 
-      // Rediriger vers une autre page dans le chemin /admin
-      navigate("/admin/dashboard"); // Exemple : Rediriger vers /admin/dashboard
+      navigate("/admin/dashboard");
     } catch (error) {
       console.error("Login error", error.response.data);
     }

@@ -8,19 +8,16 @@ import basketImg3 from "../images/basket3.jpg";
 import basketImg4 from "../images/basket4.jpg";
 
 function Basket() {
-  const [basket, setBasket] = useState(null); // Changez en null pour attendre un objet complet
+  const [basket, setBasket] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Requête pour récupérer les paniers avec le prix
     axios
-      .get("http://localhost:5000/api/v1/basket") // Remplacez par l'URL de votre API
+      .get("http://localhost:5000/api/v1/basket")
       .then((response) => {
-        // Mise à jour avec les paniers et prix
-        setBasket(response.data.baskets); // Utilisez la clé "baskets" dans la réponse
+        setBasket(response.data.baskets);
       })
       .catch((err) => {
-        // Gérer les erreurs
         setError("Erreur lors de la récupération des paniers");
         console.error(err);
       });
@@ -36,20 +33,17 @@ function Basket() {
             <img src={basketImg} alt="Image du panier" />
           </div>
           <div>
-            {/* Affichage de l'erreur s'il y en a */}
             {error && <p className={styles.error}>{error}</p>}
 
-            {/* Vérification que le panier est disponible */}
             {basket ? (
               basket.map((item, index) => (
                 <div key={index} className={styles.basketItem}>
                   <ul className={styles.basketList}>
-                    {/* Affichage des produits */}
                     {item.baskets.map((product, idx) => (
                       <li key={idx}>{product.name}</li>
                     ))}
                   </ul>
-                  {/* Affichage du prix du panier */}
+
                   <p className={styles.basketPrice}>
                     Prix du panier : {item.price}€
                   </p>

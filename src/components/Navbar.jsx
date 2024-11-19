@@ -6,7 +6,6 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Add or remove no-scroll class on body when menu is opened/closed
     if (isOpen) {
       document.body.classList.add(styles.noScroll);
     } else {
@@ -14,7 +13,6 @@ function Navbar() {
     }
 
     return () => {
-      // Clean up when the component unmounts
       document.body.classList.remove(styles.noScroll);
     };
   }, [isOpen]);

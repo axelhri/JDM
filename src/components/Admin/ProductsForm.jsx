@@ -1,29 +1,26 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "../../CSS/dashboard.module.css";
 
 function ProductsForm() {
-  // Initialiser avec un produit par défaut
   const [products, setProducts] = useState([{ name: "", price: 0 }]);
 
-  // Ajouter un nouveau produit
   const addProduct = () => {
     setProducts([...products, { name: "", price: 0 }]);
   };
 
-  // Supprimer un produit
   const removeProduct = (index) => {
     setProducts(products.filter((_, i) => i !== index));
   };
 
-  // Gérer les changements dans le formulaire
   const handleChange = (index, key, value) => {
     const updatedProducts = [...products];
     updatedProducts[index][key] = value;
     setProducts(updatedProducts);
   };
 
-  // Envoyer les produits à l'API
   const handleSendProducts = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -41,17 +38,15 @@ function ProductsForm() {
           },
         }
       );
-      console.log("Produits créés avec succès :", response.data);
+      toast.success("Produits créés avec succès !");
     } catch (error) {
-      console.error(
-        "Erreur lors de l'envoi des produits :",
-        error.response?.data || error.message
-      );
+      toast.error("Erreur lors de l'envoi des produits");
     }
   };
 
   return (
     <section className={styles.dashboardSection}>
+      <ToastContainer position="top-right" autoClose={3000} />
       <form>
         <h2>Produits de saison</h2>
         {products.map((product, index) => (
@@ -69,7 +64,7 @@ function ProductsForm() {
               name="number"
               placeholder="0"
               value={product.price}
-              onFocus={(e) => (e.target.value = "")} // Efface la valeur actuelle lors du focus
+              onFocus={(e) => (e.target.value = "")}
               onChange={(e) =>
                 handleChange(index, "price", parseFloat(e.target.value) || 0)
               }
@@ -85,7 +80,7 @@ function ProductsForm() {
               </button>
             )}
           </div>
-        ))}{" "}
+        ))}
         <button type="button" onClick={addProduct} className={styles.addButton}>
           <i className="fa-solid fa-plus"></i> Ajouter un produit
         </button>

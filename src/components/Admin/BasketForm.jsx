@@ -1,11 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "../../CSS/dashboard.module.css";
 
 function BasketForm() {
-  const [products, setProducts] = useState([{ name: "" }]); // Initialisation avec un produit vide
+  const [products, setProducts] = useState([{ name: "" }]);
   const [price, setPrice] = useState("");
-  const [message, setMessage] = useState(null); // Message pour succès ou erreur
 
   const handleProductChange = (index, event) => {
     const newProducts = [...products];
@@ -25,19 +26,15 @@ function BasketForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Récupération du token dans le local storage
     const token = localStorage.getItem("token");
     if (!token) {
-      setMessage({
-        type: "error",
-        text: "Token non trouvé. Veuillez vous connecter.",
-      });
+      toast.error("Token non trouvé. Veuillez vous connecter.");
       return;
     }
 
     const basketData = {
       baskets: products,
-      price: parseFloat(price), // Assurez-vous que le prix est un nombre
+      price: parseFloat(price),
     };
 
     try {
@@ -46,25 +43,20 @@ function BasketForm() {
         basketData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // En-tête Authorization avec le token
+            Authorization: `Bearer ${token}`,
           },
         }
       );
+      toast.success("Panier créé avec succès !");
     } catch (error) {
-      // Gérer les erreurs, y compris les erreurs d'authentification
-      console.error(error);
+      toast.error("Erreur lors de la création du panier");
+      console.error("Erreur :", error);
     }
   };
 
   return (
     <section className={styles.basketForm}>
-      {message && (
-        <p
-          className={message.type === "success" ? styles.success : styles.error}
-        >
-          {message.text}
-        </p>
-      )}
+      <ToastContainer position="top-right" autoClose={3000} />
       <form onSubmit={handleSubmit}>
         <h3>Panier du mois</h3>
         <div className={styles.formGroup}>
@@ -77,7 +69,7 @@ function BasketForm() {
                 onChange={(e) => handleProductChange(index, e)}
                 required
               />
-              {products.length > 0 && (
+              {products.length > 1 && (
                 <button
                   type="button"
                   className={styles.removeButton}
@@ -93,7 +85,7 @@ function BasketForm() {
             className={styles.addButton}
             onClick={handleAddProduct}
           >
-            <i className="fa-solid fa-plus"></i>Ajouter un produit
+            <i className="fa-solid fa-plus"></i> Ajouter un produit
           </button>
         </div>
 
@@ -112,10 +104,6 @@ function BasketForm() {
           Créer le panier
         </button>
       </form>
-
-      <div className={styles.backHome}>
-        <a href="/">Retour vers l&apos;acceuil</a>
-      </div>
     </section>
   );
 }

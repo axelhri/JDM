@@ -36,21 +36,17 @@ function Products() {
   ];
 
   useEffect(() => {
-    // Requête pour récupérer les produits
     axios
-      .get("http://localhost:5000/api/v1/products") // Remplacez par l'URL de votre API
+      .get("http://localhost:5000/api/v1/products")
       .then((response) => {
-        // Mise à jour du tableau des produits
         setProducts(response.data.products);
       })
       .catch((err) => {
-        // Gérer les erreurs
         setError("Erreur lors de la récupération des produits");
         console.error(err);
       });
   }, []);
 
-  // Fonction pour générer des indices uniques pour les images de la mosaïque
   const getUniqueIndices = (excludeIndex, currentMosaicIndices) => {
     const indices = new Set();
     while (indices.size < 4) {

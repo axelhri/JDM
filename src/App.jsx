@@ -8,8 +8,9 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import Terms from "./components/Terms.jsx";
 import Login from "./components/Admin/Login.jsx";
-import Dashboard from "./components/Admin/Dashboard.jsx"; // Composant Dashboard
-import PrivateRoute from "./components/Admin/PrivateRoute.jsx"; // Importer PrivateRoute
+import Dashboard from "./components/Admin/Dashboard.jsx";
+import PrivateRoute from "./components/Admin/PrivateRoute.jsx";
+import NotFound from "./components/NotFound.jsx"; // Importer le composant 404
 
 function App() {
   return (
@@ -39,14 +40,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/terms"
-            element={
-              <>
-                <Terms />
-              </>
-            }
-          />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/admin" element={<Login />} />
           <Route
             path="/admin/dashboard"
@@ -56,6 +50,9 @@ function App() {
               </PrivateRoute>
             }
           />
+
+          {/* Route 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </Router>
