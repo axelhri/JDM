@@ -94,7 +94,7 @@ h4 {
   gap: 1rem;
   inline-size: max-content;
   margin-inline: auto;
-  list-style: circle;
+  list-style: disc;
   inline-size: 60%;
 }
 

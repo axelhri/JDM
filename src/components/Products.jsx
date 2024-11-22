@@ -285,9 +285,11 @@ function Products() {
         </div>
 
         <div className={styles.prices}>
-          <span className={styles.pricesContainerTitle}>
-            Produits de cette saison
-          </span>
+          <div className={styles.sznKeyframes}>
+            <span className={styles.pricesContainerTitle}>
+              Produits de cette saison
+            </span>
+          </div>
           <div className={styles.seasonalProducts}>
             <ul className={styles.seasonalList}>
               {products.length > 0 ? (

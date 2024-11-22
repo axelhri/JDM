@@ -104,6 +104,9 @@ function BasketForm() {
           Créer le panier
         </button>
       </form>
+      <div className={styles.backHome}>
+        <a href="/">Retour vers l&apos;acceuil</a>
+      </div>
     </section>
   );
 }

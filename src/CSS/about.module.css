@@ -200,6 +200,36 @@
     max-inline-size: 20rem;
   }
 
+  article:first-of-type .aboutImg {
+    animation: slide-left linear;
+    animation-timeline: view(10px 10px);
+    transform: translateX(20rem);
+  }
+
+  article:last-of-type .aboutImg {
+    animation: slide-right linear;
+    animation-timeline: view(10px 10px);
+    transform: translateX(-20rem);
+  }
+
+  @keyframes slide-right {
+    from {
+      transform: translateX(-10rem);
+    }
+    to {
+      transform: translateX(0rem);
+    }
+  }
+
+  @keyframes slide-left {
+    from {
+      transform: translateX(10rem);
+    }
+    to {
+      transform: translateX(0rem);
+    }
+  }
+
   .aboutText {
     inline-size: 30vw;
   }

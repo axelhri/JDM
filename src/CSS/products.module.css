@@ -63,6 +63,8 @@ h3 {
 .carousel {
   block-size: 15rem;
   display: block;
+  animation: fade-in linear;
+  animation-timeline: view(700px 10px);
 }
 
 .carouselImage {
@@ -74,6 +76,17 @@ h3 {
 .carousel img {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 @keyframes addBlur {
@@ -114,6 +127,17 @@ h3 {
   inline-size: max-content;
   margin-inline-start: 5vw;
   font-weight: 600;
+  animation: title linear;
+  animation-timeline: view(600px 10px);
+}
+
+@keyframes title {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 
 .productsList {
@@ -169,6 +193,11 @@ h3 {
   inline-size: max-content;
   margin-inline-start: 5vw;
   font-weight: 600;
+}
+
+.sznKeyframes {
+  animation: title linear;
+  animation-timeline: view(600px 10px);
 }
 
 .seasonalProducts {
@@ -247,6 +276,8 @@ h3 {
 
   .carouselMosaic {
     display: block;
+    animation: fade-in linear;
+    animation-timeline: view(700px 10px);
   }
 
   .mosaicImgBox:hover > .carouselImage {

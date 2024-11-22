@@ -11,6 +11,8 @@ import Login from "./components/Admin/Login.jsx";
 import Dashboard from "./components/Admin/Dashboard.jsx";
 import PrivateRoute from "./components/Admin/PrivateRoute.jsx";
 import NotFound from "./components/NotFound.jsx"; // Importer le composant 404
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             element={
               <>
                 <Navbar />
+                <ToastContainer position="top-center" autoClose={3000} />
+
                 <Header />
                 <div id="aboutSection">
                   <About />
