@@ -15,7 +15,7 @@ function Basket() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/basket")
+      .get("https://jdm-back-end-kvxh.onrender.com/api/v1/basket")
       .then((response) => {
         setBasket(response.data.baskets);
       })
