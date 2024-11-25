@@ -29,7 +29,7 @@ function ProductsForm() {
       }
 
       const response = await axios.post(
-        "https://jdm-back-end-kvxh.onrender.com/api/v1/products",
+        "https://jdm-back-end.onrender.com/api/v1/products",
         products,
         {
           headers: {
