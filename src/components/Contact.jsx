@@ -14,7 +14,7 @@ function Contact() {
       message: event.target[4].value,
     };
 
-    fetch("http://localhost:5000/api/v1/emails/send", {
+    fetch("https://jdm-back-end-kvxh.onrender.com/api/v1/emails/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
