@@ -297,7 +297,7 @@ function Products() {
                   <li key={index}>
                     <p>{product.name}</p>
                     <span>
-                      {product.price}{" "}
+                      {parseFloat(product.price).toFixed(2).replace(".", ",")}{" "}
                       <span
                         style={{
                           color: "rgb(253, 213, 80)",

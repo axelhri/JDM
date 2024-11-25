@@ -26,7 +26,7 @@ function Navbar() {
               isOpen ? styles.active : styles.notActive
             }`}
           >
-            <a href="/">Les Jardins de Magotte</a>
+            <a href="#Navbar">Les Jardins de Magotte</a>
           </div>
           <div
             className={`${styles.linksContainer} ${
@@ -70,6 +70,12 @@ function Navbar() {
                 }`}
               ></div>
             </div>
+          </div>
+
+          <div className={styles.navSocial}>
+            <a href="https://www.facebook.com/FermierMagotte" target="_blank">
+              <i className="fa-brands fa-facebook"></i>
+            </a>
           </div>
         </div>
       </header>

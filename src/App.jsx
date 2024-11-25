@@ -23,7 +23,9 @@ function App() {
             path="/"
             element={
               <>
-                <Navbar />
+                <div id="Navbar">
+                  <Navbar />
+                </div>
                 <ToastContainer position="top-center" autoClose={3000} />
 
                 <Header />

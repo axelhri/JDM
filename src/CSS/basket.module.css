@@ -68,7 +68,7 @@ h4 {
   margin-inline: auto;
 }
 
-.monthlyBasket {
+.weeklyBasket {
   text-align: center;
   font-family: var(--ff-poppins);
   font-size: 1.6em;
@@ -95,7 +95,8 @@ h4 {
   inline-size: max-content;
   margin-inline: auto;
   list-style: disc;
-  inline-size: 60%;
+  inline-size: 70%;
+  position: relative;
 }
 
 .basketPrice {
@@ -202,6 +203,7 @@ h4 {
   }
   .basketImgsContainer {
     margin-inline: auto;
-    inline-size: 80%;
+    inline-size: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

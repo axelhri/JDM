@@ -6,6 +6,8 @@ import basketImg1 from "../images/basket1.jpg";
 import basketImg2 from "../images/basket2.jpg";
 import basketImg3 from "../images/basket3.jpg";
 import basketImg4 from "../images/basket4.jpg";
+import basketImg5 from "../images/basket5.jpg";
+import basketImg6 from "../images/basket6.jpg";
 
 function Basket() {
   const [basket, setBasket] = useState(null);
@@ -27,7 +29,7 @@ function Basket() {
     <section id={styles.basket}>
       <h4>Nos paniers</h4>
       <div className={styles.basketContainer}>
-        <p className={styles.monthlyBasket}>Panier du mois :</p>
+        <p className={styles.weeklyBasket}>Panier de la semaine :</p>
         <article>
           <div className={styles.basketImg}>
             <img src={basketImg} alt="Image du panier" />
@@ -40,7 +42,9 @@ function Basket() {
                 <div key={index} className={styles.basketItem}>
                   <ul className={styles.basketList}>
                     {item.baskets.map((product, idx) => (
-                      <li key={idx}>{product.name}</li>
+                      <li key={idx}>
+                        {product.quantity} {product.name}
+                      </li>
                     ))}
                   </ul>
 
@@ -77,6 +81,12 @@ function Basket() {
           </div>
           <div className={styles.basketImgBox}>
             <img src={basketImg4} alt="" />
+          </div>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg5} alt="" />
+          </div>
+          <div className={styles.basketImgBox}>
+            <img src={basketImg6} alt="" />
           </div>
         </div>
       </div>

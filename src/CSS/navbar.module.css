@@ -116,6 +116,10 @@ nav > header {
   transform: translateX(-5px);
 }
 
+.navSocial {
+  display: none;
+}
+
 /* max 1000px */
 
 @media screen and (max-width: 1000px) {
@@ -184,6 +188,23 @@ nav > header {
 @media screen and (min-width: 1000px) {
   nav {
     block-size: 7vh;
+  }
+
+  .navSocial {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-inline-end: 2rem;
+  }
+
+  .navSocial a {
+    color: #419ef5;
+    transition: var(--transition-02);
+  }
+
+  .navSocial a:hover {
+    color: #3780c5;
+    font-size: 2rem;
   }
 
   .navContainer {
