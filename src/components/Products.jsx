@@ -37,7 +37,7 @@ function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/products")
+      .get("https://jdm-back-end-kvxh.onrender.com/api/v1/products")
       .then((response) => {
         setProducts(response.data.products);
       })
