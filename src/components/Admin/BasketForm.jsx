@@ -45,7 +45,7 @@ function BasketForm() {
 
     try {
       const response = await axios.post(
-        "https://jdm-back-end-kvxh.onrender.com/api/v1/basket",
+        "https://jdm-back-end.onrender.com/api/v1/basket",
         basketData,
         {
           headers: {
