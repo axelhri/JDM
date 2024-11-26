@@ -1,9 +1,10 @@
 import styles from "../CSS/contact.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios"; // Import Axios
 
 function Contact() {
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const formData = {
@@ -14,22 +15,24 @@ function Contact() {
       message: event.target[4].value,
     };
 
-    fetch("https://jdm-back-end.onrender.com/api/v1/emails/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          toast.success("Message envoyé avec succés !");
-        } else {
-          toast.error("Erreur lors de l'envoi");
+    try {
+      const response = await axios.post(
+        "https://jdm-back-end.onrender.com/api/v1/emails/send",
+        formData,
+        {
+          headers: { "Content-Type": "application/json" },
         }
-      })
-      .catch((error) => {
-        console.error("Erreur:", error);
-        toast.error("Erreur de connexion au serveur");
-      });
+      );
+
+      if (response.status === 200) {
+        toast.success("Message envoyé avec succés !");
+      } else {
+        toast.error("Erreur lors de l'envoi");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      toast.error("Erreur de connexion au serveur");
+    }
   }
 
   return (
